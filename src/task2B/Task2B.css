@@ -1,0 +1,50 @@
+.contD{
+    border:1px solid black;
+    text-align: center;
+    width: 1000px;
+    margin: 0 auto;
+}
+.wrapdiv{
+    display: flex;
+    justify-content: row;
+    margin-left: 50px;
+}
+.firstNameDiv{
+    font-size: 22px;
+    width: 500px;
+    margin-bottom: 50px;
+    margin-top: 20px;
+    margin-right: 40px;
+    
+}
+.clickEve{
+    padding: 10px 20px;
+    border-radius: 7px;
+    background-color: rgb(198, 250, 250);
+}
+.lastNameDiv{
+    margin: 21px 0 0 0;
+    font-size: 22px;
+}
+.wrapdiv{
+    margin-right: 140px;
+}
+.radioDiv{
+    margin-right: 14px;
+    padding: 10px 20px;
+}
+.labelDiv{
+    font-size: 22px;
+   
+}
+
+.buttonDiv{
+    height: 50px;
+    width: 20%;
+    border-radius: 10px;
+    background-color: green;
+    color: white;
+    font-size: 16px;
+    border: none;
+   
+}

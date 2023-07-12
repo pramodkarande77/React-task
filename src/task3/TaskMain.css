@@ -1,0 +1,31 @@
+.DivContain{
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    margin: 100px auto;
+
+}
+.midDiv{
+    width: 40%;
+    border: 1px solid black;
+    padding: 20px;
+   
+}
+.Foemdiv{
+   display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+    
+.IntDiv{
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+.secDiv{
+    width: 55%;
+    border: 1px solid black;
+    padding: 20px;
+   
+}
