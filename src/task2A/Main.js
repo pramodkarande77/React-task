@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
+
 
 
 
@@ -17,57 +18,56 @@ function Main() {
   return (
 
     <>
-      <div className='container col-5'
-        style={{
-          marginTop: "100px", paddingBottom: "50px", border: "1px solid #ccc"
-          , background: "lightblue", borderRadius: "10px"
-        }}>
 
-        <form >
-          <div className='d-flex' >
-            <div className='inputDiv'>
-
-              <label style={{fontSize:"20px",fontWeight:"bold",margin:"5px 0px 0px 20px"}}>First Name</label>
-              <input name='First Name' type='text'
-                style={{ width: "250", padding: "5px 5px 5px 2px",margin:"5px 0px 5px 20px", background: "lightwhite", borderRadius: "10px" }}></input>
-
+      <div className='container mt-5 ' >
+        <div class="card shadow ">
+          <div class="card-body">
+            <div className='col-sm-8 mx-auto'>
+              <div className='row '>
+                <div className="col-sm-6 form-group ">
+                  <label for="input-text">First Name</label>
+                  <input type="text" class="form-control" id="input-text" />
+                </div>
+                <div className="col-sm-6 form-group">
+                  <label for="inp-text">Last Name</label>
+                  <input type="text" class="form-control" id="inp-text" />
+                </div>
+              </div>
             </div>
-            <div className='inputDiv'>
+            <div className='col-sm-8 mx-auto'>
+              <div className='row'>
+                <div className='col-sm-6'>
+                  <label for="input-text1">How should we contact you?</label>
+                  <select name="" id="input-text1" class="form-control" onChange={handleChange}>
+                    <option >Choose Option</option>
+                    <option value="phone">Phone</option>
+                    <option value="email">Email</option>
+                  </select>
+                </div>
+                {data === 'phone' ? <div className='col-sm-6'>
 
-              <label style={{fontSize:"20px",fontWeight:"bold",margin:"5px 0px 0px 20px"}}>Last Name</label>
-              <input name='Last Name' type='text'
-                style={{ width: "250", padding: "5px 5px 5px 2px",margin:"5px 0 5px 25px ", background: "lightwhite", borderRadius: "10px" }} ></input>
+                  <label for="inp-text1">{data === "phone" ? "Phone Number" : "Email Adress"}</label>
+                  <input name='phone' type='text' class="form-control" id="inp-text1"></input>
+                </div>
+                  : data === 'email' ? <div className='col-sm-6'>
+                    <label for="inp-text1">{"Email Adress"}</label>
+                    <input name='phone' type='text' class="form-control" id="inp-text1"></input>
+                  </div> : ""}
 
-            </div>
-          </div>
-          <div className='d-flex' style={{ padding: "0 0 0 20px" }}>
-            <div style={{ width: "223px" }}>
-
-              <label style={{fontWeight:"bold"}}>How should we contact you?</label>
-
-              <select onChange={handleChange}
-                style={{ padding: "7px 30px 7px 35px", background: "lightwhite", borderRadius: "10px" }} >
-                <option style={{fontWeight:"bold"}}>Choose Option</option>
-                <option value='phone' >Phone</option>
-                <option value='email' >Email</option>
-              </select>
-
-
-            </div>
-
-            <div style={{ width: "250px", marginLeft: "60px", display: data ? "" : "none" }}>
-
-              <label >{data === "phone" ? "Phone Number" : "Email Adress"}</label>
-              <input name='phone' type='text' style={{ width: "250", padding: "5px 5px 5px 2px", background: "lightwhite", borderRadius: "10px" }}></input>
-
+              </div>
             </div>
           </div>
-
-        </form>
-
+        </div>
       </div>
+
     </>
   )
 }
 
 export default Main 
+
+
+
+
+
+
