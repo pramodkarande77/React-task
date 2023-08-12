@@ -17,7 +17,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path='/' element={<Main />} />
-          {/* <Route path='task2' element={<MainForm />} /> */}
+          <Route path='task2' element={<MainForm />} />
           <Route path='task3' element={<MainFile />} />
           <Route path='task4' element={<ChartMain />} />
         </Routes>

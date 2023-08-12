@@ -30,7 +30,7 @@ function MainFile() {
   return (
 
 
-    <div className='container mt-5'>
+    <div className='container mt-5 mr-5'>
       <div className='row  mx-auto'>
         <div className='col-sm-4 border border-dark p-3 '>
           <form onSubmit={handlesubmit}>
@@ -49,24 +49,8 @@ function MainFile() {
 
         <div className='col-sm-6 border border-dark p-3'>
 
-          {/* <Accordion>
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-            >
-              <Typography>Section 1</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                malesuada lacus ex, sit amet blandit leo lobortis eget.
-              </Typography>
-            </AccordionDetails>
-          </Accordion> */}
-
           <div class="accordion" id="accordionExample">
-            <div class="card shadow">
+            <div class="card">
               <div class="card-header" id="headingOne">
                 <h2 class="mb-0">
                   <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -89,7 +73,7 @@ function MainFile() {
 
 
               <div class="accordion" id="accordionExample">
-              <div class="card shadow">
+              <div class="card">
                 <div class="card-header" id="headingOne">
                   <h2 class="mb-0">
                     <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne1" aria-expanded="true" aria-controls="collapseOne">
@@ -105,21 +89,6 @@ function MainFile() {
                 </div>
               </div>
             </div>
-
-              // <Accordion sx={{ marginTop: "15px" }}>
-              //   <AccordionSummary
-              //     expandIcon={<ExpandMoreIcon />}
-              //     aria-controls="panel1a-content"
-              //     id="panel1a-header"
-              //   >
-              //     <Typography>{item.header}</Typography>
-              //   </AccordionSummary>
-              //   <AccordionDetails>
-              //     <Typography>
-              //       {item.details}
-              //     </Typography>
-              //   </AccordionDetails>
-              // </Accordion>
             )
           })}
 

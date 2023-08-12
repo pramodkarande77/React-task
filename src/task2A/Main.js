@@ -23,7 +23,7 @@ function Main() {
         <div class="card shadow ">
           <div class="card-body">
             <div className='col-sm-8 mx-auto'>
-              <div className='row '>
+              <div className='row mb-4'>
                 <div className="col-sm-6 form-group ">
                   <label for="input-text">First Name</label>
                   <input type="text" class="form-control" id="input-text" />

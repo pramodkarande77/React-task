@@ -6,8 +6,8 @@ function Navbar() {
     <div className='NavDiv'>
 
         <ul className='UlDiv'>
-           <Link to="/">Task-2</Link>
-           {/* <Link to="task2">Task-2</Link> */}
+           <Link to="/">Task-2A</Link>
+           <Link to="task2">Task-2B</Link>
            <Link to="task3">Task-3</Link>
            <Link to="task4">Task-4</Link>  
         </ul>

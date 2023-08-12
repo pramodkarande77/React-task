@@ -32,8 +32,8 @@ const ChartMain = () => {
         setErr("");
       }
     } else {
-      
-      setErr("Enter Value Greater than 0 & Less than 100");
+
+        setErr("Enter Value Greater than 0 & Less than 100");
       
     }
   };
@@ -63,7 +63,6 @@ const ChartMain = () => {
       {err && <p style={{ color: "red" }}>{err}</p>}
       
       <div className="row col-sm-8 mx-auto mb-3">
-      <div className=""></div>
         <div className="col-sm-5">
           <label htmlFor="true">Box 1</label>
           <input
@@ -86,7 +85,7 @@ const ChartMain = () => {
             onChange={handleChange}
           />
         </div>
-        <div>
+        <div className="row ml-2">
         <button className="btn btn-primary rounded-pill mt-4" onClick={handleSubmit}>Create Chart</button>
         </div>
 

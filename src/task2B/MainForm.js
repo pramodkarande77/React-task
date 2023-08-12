@@ -1,122 +1,71 @@
 import React, { useState } from 'react'
 import "./Task2B.css";
+import { FormControlLabel, FormLabel, Radio, RadioGroup } from '@mui/material';
 
 function MainForm() {
 
-  const [selectedOption, setSelectedOption] = useState('');
-  const [isFormComplete, setIsFormComplete] = useState(false);
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [email, setEmail] = useState('');
+  const [data, setData] = useState("")
 
-  const handleOptionChange = (event) => {
-    setSelectedOption(event.target.value);
-  };
+  const handleChange = (e) => {
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+    setData(e.target.value)
+    console.log(e.target.value);
 
-    if (
-      selectedOption &&
-      firstName &&
-      lastName &&
-      (selectedOption === 'number' ? phoneNumber : email)
-    ) {
-      setIsFormComplete(true);
-      console.log('Form submitted:', {
-        selectedOption,
-        firstName,
-        lastName,
-        phoneNumber,
-        email,
-      });
-
-      setSelectedOption('');
-      setFirstName('');
-      setLastName('');
-      setPhoneNumber('');
-      setEmail('');
-    } else {
-      setIsFormComplete(false);
-    }
-  };
+  }
 
   return (
-    <form onSubmit={handleSubmit} className='contD'>
-      <div className='wrapdiv'>
-        <label className='firstNameDiv'>
-          First Name<br />
-          <input
-            type='text'
-            value={firstName}
-            className='clickEve'
-            onChange={(e) => setFirstName(e.target.value)}
-          />
-        </label>
-        <label className='lastNameDiv'>
-          Last Name<br />
-          <input
-            type='text'
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
-            className='clickEve'
-          />
-        </label>
+
+    <>
+
+      <div className='container mt-5' >
+        <div class="card shadow ">
+          <div class="card-body">
+            <div className='col-sm-8 mx-auto'>
+              <div className='row mb-4'>
+                <div className="col-sm-6 form-group ">
+                  <label for="input-text">First Name</label>
+                  <input type="text" class="form-control" id="input-text" />
+                </div>
+                <div className="col-sm-6 form-group">
+                  <label for="inp-text">Last Name</label>
+                  <input type="text" class="form-control" id="inp-text" />
+                </div>
+              </div>
+            </div>
+            <div className='col-sm-8 mx-auto'>
+              <div className='row'>
+                <div className='col-sm-6'>
+                  <FormLabel id="radio">How should we contact you?</FormLabel>
+                  <RadioGroup
+                    row
+                    aria-labelledby="radio"
+                    name="radio"
+                    value={data}
+                    onChange={handleChange}
+                  >
+                    <FormControlLabel value="phone" control={<Radio />} label="Phone" />
+                    <FormControlLabel value="email" control={<Radio />} label="Email" />
+                  </RadioGroup>
+
+                </div>
+                {data === 'phone' ? <div className='col-sm-6'>
+
+                  <label for="inp-text1">{data === "phone" ? "Phone Number" : "Email Adress"}</label>
+                  <input name='phone' type='text' class="form-control" id="inp-text1"></input>
+                </div>
+                  : data === 'email' ? <div className='col-sm-6'>
+                    <label for="inp-text1">{"Email Adress"}</label>
+                    <input name='phone' type='text' class="form-control" id="inp-text1"></input>
+                  </div> : ""}
+
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div className='radioWrapper'>
-        <h1>How should we contact you?</h1>
-        <div>
-          <label style={{margin:"20px"}} className='labelDiv'>
-            <input
-              type='radio'
-              value='number'
-              checked={selectedOption === 'number'}
-              onChange={handleOptionChange}
-              className='radioDiv'
-            />
-            Phone Number
-          </label>
-        </div>
-        <div>
-          <label className='labelDiv'>
-            <input
-              type='radio'
-              value='email'
-              checked={selectedOption === 'email'}
-              onChange={handleOptionChange}
-              className='radioDiv'
-            />
-            Email Address
-          </label>
-        </div>
-      </div>
-      {selectedOption === 'number' && (
-        <div className='itemDiv'>
-          <label >Phone Number</label>
-          <input
-            type='number'
-            value={phoneNumber}
-            onChange={(e) => setPhoneNumber(e.target.value)}
-          />
-        </div>
-      )}
-      {selectedOption === 'email' && (
-        <div className='itemDiv'>
-          <label style={{ margin: '20px' }}>Email Address</label>
-          <input
-            type='email'
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-      )}
-      {/* {isFormComplete === false && (
-        <p style={{ color: 'red' }}>Please fill all details.</p>
-      )} */}
-      <button className='buttonDiv' type='submit' style={{margin:'80px'}}>Submit</button>
-    </form>
-  );
+
+    </>
+  )
 }
 export default MainForm;
 
